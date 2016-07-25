@@ -5,6 +5,7 @@
     <title>Document</title>
     <!--same as  href="/css/style.css"-->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/app.css">
 
 		@yield('header')
 </head>

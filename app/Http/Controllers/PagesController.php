@@ -8,12 +8,6 @@ use App\Http\Requests;
 
 class PagesController extends Controller
 {
-
-    public function home()
-    {
-      return view('welcome');
-    }
-
     public function controllerAbout()
     {
       $people= ['Taylor', 'Matt', 'Jeffery'];

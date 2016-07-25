@@ -10,8 +10,20 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::group(['middlewareGroups'], function () {
 
-Route::get('/', 'PagesController@home');
+	Route::get('begin', function() {
+		flash('You are now signed in!');
+
+		return redirect('/');
+	});
+
+
+Route::get('/', function()
+	{
+		return view('welcome');
+	});
+});
 
 // about(name) , PagesController@home(controller)
 Route::get('about', 'PagesController@controllerAbout');
@@ -31,5 +43,16 @@ Route::get('notes/{note}/edit', 'NotesController@edit');
 Route::patch('notes/{note}', 'NotesController@update');
 
 Route::auth();
+
+Route::get('foobar', function () {
+	$user = new App\User;
+
+	$user->username= 'JohnAdministratorDoe';
+	$user->email='john@example.com';
+	$user->password= bcrypt('password');
+	$user->save();
+
+	return 'Done';
+});
 
 Route::get('/dashboard', 'HomeController@index');
