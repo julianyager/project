@@ -13,7 +13,7 @@
 Route::group(['middlewareGroups'], function () {
 
 	Route::get('begin', function() {
-		flash('You are now signed in!');
+		flash('You are now signed in!', 'Success');
 
 		return redirect('/');
 	});
